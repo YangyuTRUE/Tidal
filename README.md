@@ -4,19 +4,19 @@
 
 <h1 align="center">Tidal</h1>
 
-<p align="center">在 Zotero 中翻译论文，贴着原文读懂每一段。</p>
+<p align="center">在 Zotero 中完整解析并翻译PDF论文，用LLM读懂每一段。</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.3-2563eb" alt="版本 0.1.3" />
-  <img src="https://img.shields.io/badge/Zotero-7–10-cc2936" alt="清单兼容范围 Zotero 7–10" />
+  <img src="https://img.shields.io/badge/Zotero-10-cc2936" alt="清单兼容范围 Zotero 7–10" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-16a34a" alt="MIT 许可证" /></a>
 </p>
 
-Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF，连接你选择的翻译服务，在阅读器旁查看译文、定位原文，并将结果保存回文库。
+Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF，连接你自己的翻译服务，在阅读器旁查看译文、定位原文，并将结果保存回文库。
 
 ## 能做什么
 
-- **全文与选区翻译**：翻译整篇 PDF，或只翻译阅读器中选中的文字。
+- **全文与选区翻译**：翻译整篇 PDF。
 - **贴着 PDF 阅读**：可调宽、可换边的译文抽屉，支持 PDF、原文和译文之间的段落定位。
 - **保留论文结构**：支持公式、代码、表格与图片显示，复制段落或全文 Markdown。
 - **智能保留参考文献**：默认保留参考文献原文，也可改为按标题识别或全部翻译。
@@ -60,7 +60,7 @@ Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF
 
 也可选择 **Chat Completions 通用** 或 **Qwen-MT 兼容**，按服务要求填写地址和模型。上述模型为当前插件的默认配置，实际可用性以你的服务账号为准。术语表支持每行填写 `原文 = 译文`。
 
-**全文翻译需要 MinerU Token 和翻译 API Key；选区翻译只需要翻译服务。** 可点击“测试翻译连接”检查当前填写的配置；它发送固定短句，不保存设置，可能产生一次 API 费用。
+**全文翻译需要 MinerU Token 和翻译 API Key。** 可点击“测试翻译连接”检查当前填写的配置；它发送固定短句，不保存设置，可能产生一次 API 费用。
 
 ### 2. 开始翻译
 
@@ -107,19 +107,9 @@ python3 tools/build.py --check dist/tidal-0.1.3.xpi
 
 安装包输出到 `dist/tidal-0.1.3.xpi`。构建会检查脚本语法、XHTML、资源版本、依赖哈希和 XPI 完整性；大小与 SHA-256 写入本地 `reports/release.json`。
 
-```text
-addon/                插件源码、图标与固定依赖
-assets/               项目素材
-docs/                 兼容说明与公开截图
-tools/                构建与依赖维护工具
-package.json          版本与构建入口
-LICENSE               MIT 许可证
-```
-
-本地测试、测试报告、服务密钥、个人配置和构建产物已通过 `.gitignore` 排除。XPI 安装包通过 GitHub Releases 分发。
 
 ## 作者与许可
 
-作者：<!-- 在此填写你的名字、主页或联系方式 -->
+作者：<!-- https://github.com/YangyuTRUE -->
 
 本项目采用 [MIT License](LICENSE)。第三方依赖保留各自许可证，见 [addon/content/vendor](addon/content/vendor)。
