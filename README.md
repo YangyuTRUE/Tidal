@@ -4,15 +4,13 @@
 
 <h1 align="center">Tidal</h1>
 
-<p align="center">在 Zotero 中完整解析并翻译PDF论文，用LLM读懂每一段。</p>
+<p align="center"> 由 MinerU 与 LLM 驱动的一站式PDF论文解析/翻译器 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.3-2563eb" alt="版本 0.1.3" />
   <img src="https://img.shields.io/badge/Zotero-10-cc2936" alt="清单兼容范围 Zotero 7–10" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-16a34a" alt="MIT 许可证" /></a>
 </p>
-
-Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF，连接你自己的LLM翻译服务，在PDF阅读器旁查看译文、定位原文。
 
 ## 能做什么
 
