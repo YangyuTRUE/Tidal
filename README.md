@@ -4,7 +4,7 @@
 
 <h1 align="center">Tidal</h1>
 
-<p align="center"> 由 MinerU 与 LLM 驱动的一站式PDF论文解析/翻译器 </p>
+<p align="center"> 由 MinerU 与 LLM 驱动的一站式Zotero PDF论文解析/翻译器 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.3-2563eb" alt="版本 0.1.3" />
