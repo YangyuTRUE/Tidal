@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' chrome:; style-src 'self' chrome: 'unsafe-inline'; img-src 'self' chrome:; connect-src 'none'; base-uri 'none'; form-action 'none'"/>
+<title>Tidal · 翻译历史</title><link rel="stylesheet" href="chrome://tidal/content/history.css?v=0.1.3"/><link rel="stylesheet" href="chrome://tidal/content/appearance.css?v=0.1.3"/>
+<script src="chrome://tidal/content/appearance.js?v=0.1.3" defer="defer"></script><script src="chrome://tidal/content/history.js?v=0.1.3" defer="defer"></script>
+</head><body><div class="history-app">
+<header class="history-header"><img src="chrome://tidal/content/icons/icon-48.png" width="32" height="32" alt=""/><div><h1>翻译历史</h1><p>打开缓存不会重新解析或翻译，未完成任务可打开后手动继续。</p></div><button id="refresh" type="button">刷新</button><button id="close" type="button">关闭</button></header>
+<main class="history-workspace"><section class="history-index" aria-label="历史记录列表"><label for="search">搜索历史</label><input id="search" type="search" placeholder="标题、模型或语言"/>
+<div class="history-filters" role="group" aria-label="筛选历史"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="complete" aria-pressed="false">已完成</button><button type="button" data-filter="incomplete" aria-pressed="false">未完成</button><button type="button" data-filter="corrupt" aria-pressed="false">损坏</button></div>
+<p id="historyCount" class="subtle"></p><div id="historyList" class="history-list" role="group" aria-label="翻译记录"></div></section>
+<section class="history-detail" aria-label="历史详情"><div id="detailEmpty" class="empty">选择一条记录查看缓存内容。<br/>首次翻译可从 Zotero 中的 PDF 启动。</div>
+<div id="detail" hidden="hidden"><div class="detail-title"><h2 id="recordTitle"></h2><span id="recordStatus" class="record-status"></span></div><p id="recordMeta" class="subtle"></p><p id="recordProgress" class="subtle"></p>
+<div class="detail-actions"><button id="openRecord" class="primary" type="button">打开译文</button><button id="copyOriginal" type="button">复制原文 MD</button><button id="copyTranslation" type="button">复制译文 MD</button><button id="deleteRecord" class="danger" type="button">删除记录</button></div>
+<p id="recordHint" class="subtle"></p><div class="preview-heading"><h3>Markdown 预览</h3><div role="group" aria-label="预览内容"><button id="previewTranslation" type="button" aria-pressed="true">译文</button><button id="previewOriginal" type="button" aria-pressed="false">原文</button></div></div><p id="previewHint" class="subtle"></p><pre id="preview" tabindex="0"></pre></div>
+</section></main><footer><span id="feedback" role="status" aria-live="polite"></span><button id="cleanupProcess" type="button" title="清理空闲任务的下载包、原始解析及导出过程文件，保留历史、正文、图片和定位。未完成解析可能需重新上传 PDF。">清理过程文件</button></footer>
+</div>
+<dialog id="deleteDialog" aria-labelledby="deleteTitle"><h2 id="deleteTitle">删除这条翻译记录？</h2><p id="deleteName"></p><p class="subtle">删除本地翻译记录和导出缓存，已保存到 Zotero 的附件、笔记及原 PDF 会保留。</p><label class="check"><input id="removeParsed" type="checkbox" checked="checked"/>同时删除未被其他历史使用的 PDF 解析缓存</label><p class="subtle">共享解析缓存会保留。删除后再次启动翻译可能重新请求服务。</p><div class="dialog-actions"><button id="cancelDelete" type="button" autofocus="autofocus">取消</button><button id="confirmDelete" class="danger" type="button">删除记录</button></div></dialog>
+</body></html>

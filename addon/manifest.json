@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Tidal",
+  "version": "0.1.3",
+  "description": "MinerU PDF 解析、DeepSeek 官方 / Chat Completions 翻译、双语阅读和 Zotero 回存。",
+  "author": "Tidal contributors",
+  "icons": {
+    "48": "content/icons/icon-48.png",
+    "96": "content/icons/icon-96.png",
+    "128": "content/icons/icon-128.png"
+  },
+  "applications": {
+    "zotero": {
+      "id": "paper-translator@local.invalid",
+      "update_url": "https://tidal.invalid/updates.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "10.0.*"
+    }
+  }
+}

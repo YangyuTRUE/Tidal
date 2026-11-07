@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' chrome:; style-src 'self' chrome: 'unsafe-inline'; img-src 'self' chrome: data:; font-src 'self' chrome: data:; connect-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>论文翻译 · Tidal</title>
+  <link rel="stylesheet" href="chrome://tidal/content/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="chrome://tidal/content/viewer.css?v=0.1.3" />
+  <link rel="stylesheet" href="chrome://tidal/content/appearance.css?v=0.1.3" />
+  <script src="chrome://tidal/content/vendor/marked.min.js"></script>
+  <script src="chrome://tidal/content/vendor/purify.min.js"></script>
+  <script src="chrome://tidal/content/vendor/katex/katex.min.js"></script>
+  <script src="chrome://tidal/content/renderer.js"></script>
+  <script src="chrome://tidal/content/core.js?v=0.1.3"></script>
+  <script src="chrome://tidal/content/appearance.js?v=0.1.3" defer="defer"></script>
+  <script src="chrome://tidal/content/viewer.js?v=0.1.3" defer="defer"></script>
+</head>
+<body>
+  <div class="app">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-defs" aria-hidden="true"><defs>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+      <symbol id="i-save" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+      <symbol id="i-saved" viewBox="0 0 24 24"><path d="m7 8 4 4 7-8M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+      <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9M14 3v7h7L14 3ZM7 14h7m-7 3h10"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 7-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2-1 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16m7-11-3 3 3 3"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16m-7-11 3 3-3 3"/></symbol>
+      <symbol id="i-paragraphs" viewBox="0 0 24 24"><path d="M10 5h10M10 12h10M10 19h10M4 4h1v4M3 8h4M3 15c0-3 4-3 4-1 0 1-4 2-4 5h4"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6m3-4v6l4 2"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h7m5 0h4M4 17h3m5 0h8"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+      <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9M14 3v7h7L14 3ZM8 14h8m-8 3h5"/></symbol>
+      <symbol id="i-retry" viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 1 8M20 3v5h-5"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-warning" viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Zm0 6v5m0 3v.1"/></symbol>
+      <symbol id="i-error" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6m-6 0 6-6"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+      <symbol id="i-working" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    </defs></svg>
+    <header class="reader-toolbar" role="toolbar" aria-label="Tidal 阅读工具栏">
+      <img id="documentIdentity" class="toolbar-logo" src="chrome://tidal/content/icons/icon-48.png" width="20" height="20" alt="Tidal"/>
+      <div id="drawerViews" class="drawer-views" role="group" aria-label="阅读内容" hidden="hidden">
+        <button id="showTranslation" class="view-button" type="button" aria-pressed="true" title="显示译文">译文</button>
+        <button id="showSource" class="view-button" type="button" aria-pressed="false" title="显示解析原文">原文</button>
+      </div>
+      <span class="toolbar-space"></span>
+      <button id="copyDocument" class="icon-button" type="button" title="复制全文 Markdown" aria-label="复制全文 Markdown" ><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-copy"/></svg></button>
+      <button id="saveOutputs" class="icon-button" type="button" title="保存为 Zotero 附件" aria-label="保存为 Zotero 附件" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-save"/></svg></button>
+      <label id="paragraphNavigation" class="icon-toggle" title="段落联动：点击 PDF 或段落同步定位" hidden="hidden">
+        <input id="followParagraph" type="checkbox" checked="checked" aria-label="段落联动"/><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-link"/></svg>
+      </label>
+      <details id="moreMenu" class="more-menu">
+        <summary id="moreActions" class="icon-button" title="更多操作与文献信息" aria-label="更多操作" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-more"/></svg></summary>
+        <div id="morePanel" class="menu-panel" role="group" aria-label="更多操作">
+          <div class="document-info"><h1 id="documentTitle">正在读取文献…</h1><p id="documentMeta"></p></div>
+          <button id="copyParagraph" class="menu-action" type="button" title="复制选中文字覆盖的完整段落，默认 Markdown；也可按 Cmd/Ctrl+C"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-copy"/></svg><span>复制本段</span></button>
+          <button id="createNote" class="menu-action" type="button" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-note"/></svg><span>存为笔记</span></button>
+          <button id="toggleParagraphTools" class="menu-action" type="button" aria-pressed="false" title="显示段落号、PDF 页码与原译文互跳"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-paragraphs"/></svg><span>段落工具</span><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" data-menu-check="true"><use href="#i-check"/></svg></button>
+          <div id="drawerControls" class="menu-placement" role="group" aria-label="抽屉位置" hidden="hidden">
+            <button id="dockLeft" class="placement-button" type="button" title="移到左侧" aria-label="移到左侧" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-left"/></svg></button><span>抽屉位置</span><button id="dockRight" class="placement-button" type="button" title="移到右侧" aria-label="移到右侧" aria-pressed="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-right"/></svg></button>
+          </div>
+          <label class="sync-control"><input id="syncScroll" type="checkbox"/> 同步滚动</label>
+          <button id="openOriginal" class="menu-action" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-pdf"/></svg><span>打开 PDF</span></button>
+          <div class="menu-separator"></div>
+          <button id="history" class="menu-action" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-history"/></svg><span>历史记录</span></button>
+          <button id="settings" class="menu-action" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-settings"/></svg><span>设置</span></button>
+        </div>
+      </details>
+      <button id="closeDrawer" class="icon-button" type="button" title="收起译文抽屉" aria-label="收起译文抽屉" ><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-close"/></svg></button>
+    </header>
+    <section id="taskStatus" class="status-strip" aria-label="任务状态">
+      <details id="taskDetails" class="task-details">
+        <summary id="statusToggle" title="任务状态与详细信息" aria-label="任务状态与详细信息" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" id="statusIcon" class="icon status-icon" viewBox="0 0 24 24" aria-hidden="true"><use id="statusGlyph" href="#i-clock"/></svg>
+          <span id="statusText">准备</span><span id="locationHint"></span><span id="progressPercent"></span>
+        </summary>
+        <div class="status-popover"><p id="statusMessage">正在加载任务…</p><p id="chunkSummary"></p><p id="savedHint"></p></div>
+      </details>
+      <span id="statusBadge" class="screen-reader-only" role="status" aria-live="polite">准备中</span>
+      <button id="retry" class="status-action" type="button" title="继续未完成段落" aria-label="继续未完成段落" disabled="disabled" hidden="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-retry"/></svg></button>
+      <button id="cancel" class="status-action" type="button" title="取消任务，保留已完成段落" aria-label="取消任务，保留已完成段落" disabled="disabled" hidden="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-stop"/></svg></button>
+      <progress id="taskProgress" max="100" value="0" aria-label="翻译进度">0%</progress>
+    </section>
+    <div id="feedbackToast" class="feedback-toast" hidden="hidden"><p id="actionFeedback" role="status" aria-live="polite"></p><button id="dismissFeedback" class="icon-button" type="button" title="关闭提示" aria-label="关闭提示" ><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-close"/></svg></button></div>
+
+    <main class="workspace" aria-label="双语阅读">
+      <section id="originalSection" class="reading-column" aria-label="原文">
+        <header class="pane-heading"><h2>原文 <span>ORIGINAL</span></h2><span id="sourceCount"></span></header>
+        <div id="originalPane" class="pane-scroll" tabindex="0">
+          <div id="originalContent" class="chunk-list">
+            <div class="empty-state"><span class="empty-symbol">文</span><h3>等待解析原文</h3><p>PDF 解析完成后，段落、表格与公式会显示在这里。</p></div>
+          </div>
+        </div>
+      </section>
+      <section id="translationSection" class="reading-column" aria-label="译文">
+        <header class="pane-heading"><h2>译文 <span>TRANSLATION</span></h2><span id="translationLanguage"></span></header>
+        <div id="translatedPane" class="pane-scroll" tabindex="0">
+          <div id="translatedContent" class="chunk-list">
+            <div class="empty-state"><span class="empty-symbol">译</span><h3>译文将逐段出现</h3><p>已完成的段落可以立即阅读。未完成的段落会保留明确状态。</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <details id="logDetails">
+        <summary title="运行日志；收起抽屉不停止后台任务">日志 <span id="logCount" class="subtle"></span></summary>
+        <ol id="logList" class="log-list" aria-label="运行日志"></ol>
+      </details>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Scoped to the existing Reader container; the PDF browser is never moved. */
+.pt-reader-layout { display: flex; flex-direction: row; min-width: 0; min-height: 0; }
+.pt-reader-layout[hidden] { display: none !important; }
+.pt-reader-layout > browser { flex: 1 1 0; min-width: 0; min-height: 0; }
+.pt-reader-drawer { display: flex; flex: 0 0 auto; min-width: 0; min-height: 0; overflow: hidden; order: 2; }
+.pt-reader-splitter { flex: 0 0 5px; cursor: col-resize; touch-action: none; background: #e5e5e5; order: 1; }
+.pt-reader-splitter:hover, .pt-reader-splitter:focus-visible { background: #9aafa8; outline: none; }
+.pt-reader-drawer[data-side="left"] { order: -2; }
+.pt-reader-splitter[data-side="left"] { order: -1; }
+.pt-reader-drawer[hidden], .pt-reader-splitter[hidden] { display: none !important; }
+.pt-reader-frame { display: block; flex: 1; width: 100%; height: 100%; min-width: 0; border: 0; }
+@media (prefers-color-scheme: dark) {
+  .pt-reader-splitter { background: #3c3c3c; }
+  .pt-reader-splitter:hover, .pt-reader-splitter:focus-visible { background: #638b7f; }
+}
