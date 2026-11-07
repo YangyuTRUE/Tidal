@@ -108,6 +108,6 @@ python3 tools/build.py --check dist/tidal-0.1.3.xpi
 
 ## 作者与许可
 
-作者：<!-- https://github.com/YangyuTRUE -->
+作者：https://github.com/YangyuTRUE
 
 本项目采用 [MIT License](LICENSE)。第三方依赖保留各自许可证，见 [addon/content/vendor](addon/content/vendor)。
