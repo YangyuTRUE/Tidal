@@ -1,0 +1,13 @@
+{
+  "name": "zotero-tidal",
+  "version": "0.1.3",
+  "private": true,
+  "description": "Tidal: bilingual research reading in Zotero",
+  "scripts": {
+    "build": "python3 tools/build.py"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
