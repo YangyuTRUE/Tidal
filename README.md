@@ -12,7 +12,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-16a34a" alt="MIT 许可证" /></a>
 </p>
 
-Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF，连接你自己的翻译服务，在阅读器旁查看译文、定位原文，并将结果保存回文库。
+Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF，连接你自己的LLM翻译服务，在PDF阅读器旁查看译文、定位原文。
 
 ## 能做什么
 
@@ -36,7 +36,7 @@ Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF
 
 <img src="docs/images/settings.png" width="960" alt="Tidal 设置界面，展示配色、明暗模式、字体和字号预览" />
 
-截图来自插件实际界面组件，使用演示内容，不包含真实文库或服务凭证。
+
 
 ## 安装
 
@@ -44,7 +44,7 @@ Tidal 是一个 Zotero 论文翻译与双语阅读插件：用 MinerU 解析 PDF
 2. 在 Zotero 的 **工具 → 插件** 中，点击齿轮菜单，选择 **从文件安装插件…**。
 3. 选择下载的 XPI，安装后打开 **工具 → Tidal：设置…**。
 
-清单声明兼容 Zotero **7.0–10.0.x**；已有原生验证记录来自 **macOS + Zotero 10.0.7**。其他系统和版本仍需验证，详见 [升级与兼容](docs/COMPATIBILITY.md)。当前通过手动安装 XPI 更新。
+清单声明兼容 Zotero **10.0.x**；已有原生验证记录来自 **macOS + Zotero 10.0.7**。其他系统和版本仍需验证，详见 [升级与兼容](docs/COMPATIBILITY.md)。当前通过手动安装 XPI 更新。
 
 ## 三步开始
 
